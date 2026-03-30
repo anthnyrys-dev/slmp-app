@@ -27,17 +27,16 @@ class PostSeeder extends Seeder
 
         foreach ($posts as $item) {
             $userId = $item['userId'];
-            $user = null;
 
             if (!isset($users[$userId])) {
-                $user = User::query()->find($userId);
+                $users[$userId] = User::query()->find($userId);
             }
+
+            $user = $users[$userId] ?? null;
 
             if (!$user) {
                 continue;
             }
-
-            $users[$userId] = $user;
 
             Post::updateOrCreate(
                 ['id' => $item['id']],
