@@ -22,6 +22,6 @@ class UserService implements UserServiceInterface
 
     public function create(StoreUserData $storeUserData): User
     {
-        return User::create($storeUserData);
+        return User::create((array) $storeUserData);
     }
 }
