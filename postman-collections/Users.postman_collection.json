@@ -1,0 +1,243 @@
+{
+  "info": {
+    "_postman_id": "879d255e-7530-4778-b685-d6ea616c289b",
+    "name": "Users",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12021389",
+    "_collection_link": "https://go.postman.co/collection/12021389-879d255e-7530-4778-b685-d6ea616c289b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "List Users",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://laravel.test:8081/api/users",
+          "protocol": "http",
+          "host": [
+            "laravel",
+            "test"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Show User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://laravel.test:8081/api/users/1",
+          "protocol": "http",
+          "host": [
+            "laravel",
+            "test"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://laravel.test:8081/api/users/10",
+          "protocol": "http",
+          "host": [
+            "laravel",
+            "test"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "users",
+            "10"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let response = pm.response.json(); // Parse response JSON",
+              "if (response.data.token) {",
+              "    pm.globals.set('token', response.data.token);",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "Sincere@april.biz",
+              "type": "text",
+              "uuid": "f3219115-2104-452c-a1de-ee572136324b"
+            },
+            {
+              "key": "password",
+              "value": "P@ssword1234",
+              "type": "text",
+              "uuid": "8e1dab95-0729-479a-96ed-3732b023094b"
+            },
+            {
+              "key": "device_name",
+              "value": "api",
+              "type": "text",
+              "uuid": "7baf2924-cbcb-43f6-b2e4-f1a465d235f4"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://laravel.test:8081/api/login",
+          "protocol": "http",
+          "host": [
+            "laravel",
+            "test"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logout",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let response = pm.response.json(); // Parse response JSON",
+              "if (response.data.token) {",
+              "    pm.globals.set('token', response.data.token);",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://laravel.test:8081/api/logout",
+          "protocol": "http",
+          "host": [
+            "laravel",
+            "test"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

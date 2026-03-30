@@ -1,0 +1,190 @@
+{
+  "info": {
+    "_postman_id": "673ce335-c8a6-478b-986a-976bfaa240a1",
+    "name": "Posts",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12021389",
+    "_collection_link": "https://go.postman.co/collection/12021389-673ce335-c8a6-478b-986a-976bfaa240a1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "List Posts",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://laravel.test:8081/api/posts",
+          "protocol": "http",
+          "host": [
+            "laravel",
+            "test"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Show Post",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://laravel.test:8081/api/posts/1",
+          "protocol": "http",
+          "host": [
+            "laravel",
+            "test"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Post",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "id",
+              "value": "91",
+              "type": "text",
+              "uuid": "32cbefb8-aaa7-43e1-9411-da3ba8e80cf8"
+            },
+            {
+              "key": "user_id",
+              "value": "9",
+              "type": "text",
+              "uuid": "73b52849-321a-40f3-830b-73194a8e4cfc"
+            },
+            {
+              "key": "title",
+              "value": "test",
+              "type": "text",
+              "uuid": "d4692ac1-cda9-45e6-b323-7bbeac86545c"
+            },
+            {
+              "key": "body",
+              "value": "test",
+              "type": "text",
+              "uuid": "43686f72-3f59-48f2-b1fc-b2ac944cf8f9"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://laravel.test:8081/api/posts",
+          "protocol": "http",
+          "host": [
+            "laravel",
+            "test"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Show Post Copy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://laravel.test:8081/api/posts/90",
+          "protocol": "http",
+          "host": [
+            "laravel",
+            "test"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "posts",
+            "90"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
