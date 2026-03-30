@@ -101,3 +101,4 @@ Content-Type: application/json
 ![Postman collections](screenshots/postman-collections.png)
 ![User list](screenshots/users-list.png)
 ![Post list](screenshots/posts-list.png)
+![DB POSTS](screenshots/db-posts.png)
